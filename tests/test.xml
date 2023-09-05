@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="uft-8"?>
+<workflow>
+    <work    name="1" switch = "on" >
+        <!-- comment -->
+        <plugin name="echoplugin.so"  switch  ="on"  />
+        <leaf>yoko</leaf>
+        <!-- comment -->
+    </work  >
+    xxxx
+    <!-- xxxxxx-->
+</workflow>
+<!-- comment -->
