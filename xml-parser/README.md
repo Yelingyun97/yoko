@@ -4,7 +4,6 @@
 
 ## xml格式
 
-***
 
 ### 标签名
 
@@ -43,7 +42,6 @@
 
 ## 实现细节
 
-***
 
 在我的实现上，每个标签由一个Node的类来存储。
 
@@ -253,7 +251,6 @@ bool Xml::parse_text(Node &node) {
 
 ## 结尾
 
-***
 
 xml解析器的实现很大一部分参考了大佬[L_B_](https://github.com/ACking-you/MyUtil "L_B_的github")的代码，B站还有他的视频教程[C++手写xml解析器](https://www.bilibili.com/video/BV1Md4y1m78g/?spm_id_from=333.999.list.card_archive.click&vd_source=a36a154d77f1815c31c413047af1201c "视频教程")。总之算是锻炼了下动手能力吧，虽然程序的整体逻辑开起来不是很复杂，但是具体细节实现起来还是很麻烦的。因为自己是边写边想，找bug时自己都理不清楚了，后来有重新写了一遍，果然还是要想清楚后再动手。最后，程序还有很多不足，甚至会有我不知道的bug，但是目前就这样吧，毕竟要学的东西还很多。
 
