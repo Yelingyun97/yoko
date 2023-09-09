@@ -219,7 +219,6 @@ bool Xml::parse_text(Node &node) {
 
 ## 测试效果
 
-***
 
 最后放个测试用的文本的处理结果吧，这是处理的文件：
 
@@ -240,14 +239,8 @@ bool Xml::parse_text(Node &node) {
 ```
 
 这是解析完用打印出来的结果（文本进行过去前后空白字符，连续空白字符替换为一个空格的处理，输出格式还进行了处理，不然打印出来很乱）：
+![输出结果](image.png)
 
-> <workflow>
->     xxxx
->     <work name="1" switch="on">
->         <plugin name="echoplugin.so" switch="on"/>
->         <leaf>yoko</leaf>
->     </work>
-> </workflow>
 
 ## 结尾
 

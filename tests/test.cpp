@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../xml-parser/Node.h"
-#include "../xml-parser/Xml.h"
+#include "../xml_parser/Node.h"
+#include "../xml_parser/Xml.h"
 
 using namespace yoko;
 using namespace std;

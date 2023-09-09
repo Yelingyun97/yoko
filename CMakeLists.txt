@@ -6,8 +6,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -std=c++11 -Wall -g -O0")
 
 set(LIB_SRC 
-    xml-parser/Node.cpp
-    xml-parser/Xml.cpp
+    xml_parser/Node.cpp
+    xml_parser/Xml.cpp
 )
 
 add_library(yoko SHARED ${LIB_SRC})
