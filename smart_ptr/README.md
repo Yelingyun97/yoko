@@ -24,28 +24,28 @@
 
 * 右值引用本身是左值，还有一点令人费解的是，左值能够取地址，右值引用是左值当然能够取地址，但是函数的返回值如果是左值引用的话是能取地址的的，是右值引用却不能取地址，如下所示：
 
-```c++
-// 接收一个int类型的右值
-void foo(int &&i) {
-    std::cout << i << std::endl;
-}
-
-int &&foo2(int &&i) {
-    return static_cast<int &&>(i);
-}
-
-int &foo3(int &&i) {
-    return static_cast<int &&>(i);
-}
-
-int main() {
-	int &&i = 4;
-	foo(i);		// 编译不通过，报的错误是int类型的右值不能绑定到int类型的左值，说明右值引用是左值
-    &foo2(1);	// 编译不通过，foo2返回值是右值引用，但是却返回的右值，或许这也是std::forward能够实现完美转发的原因之一，
- 			// 如果说右值引用是左值，返回的也是左值的话，那么即使std::forward将传入的参数转化成右值后，返回的还是左值
-    &foo3(1);	// 编译通过，说明
-}
-```
+  > ```c++
+  > // 接收一个int类型的右值
+  > void foo(int &&i) {
+  >     std::cout << i << std::endl;
+  > }
+  > 
+  > int &&foo2(int &&i) {
+  >     return static_cast<int &&>(i);
+  > }
+  > 
+  > int &foo3(int &&i) {
+  >     return static_cast<int &&>(i);
+  > }
+  > 
+  > int main() {
+  > 	int &&i = 4;
+  > 	foo(i);		// 编译不通过，报的错误是int类型的右值不能绑定到int类型的左值，说明右值引用是左值
+  >     &foo2(1);	// 编译不通过，foo2返回值是右值引用，但是却返回的右值，或许这也是std::forward能够实现完美转发的原因之一，
+  >     			// 如果说右值引用是左值，返回的也是左值的话，那么即使std::forward将传入的参数转化成右值后，返回的还是左值
+  >     &foo3(1);	// 编译通过，说明
+  > }
+  > ```
 
 ### 三五法则
 
@@ -56,9 +56,7 @@ int main() {
 引用折叠好像没啥好说的，就拷贝一份C++primer中的概念吧：
 
 > 正常情况下，C++是不允许定义一个引用的引用，<u>但是可以通过类型别名或者模板类型参数间接定义，这种间接创建的引用的引用会形成“折叠”</u>。对于一个给定类型X，引用折叠的规则如下：
-
 > * X& &、X& &&和X&& &都折叠成类型X&
-
 > * X&& &&折叠成X&&
 
 所谓万能引用就是绑定模板参数的右值引用，也就是T&&，按书上说的万能引用能保存函数实参的所有性质，也就是const以及左值/右值的属性。
@@ -77,4 +75,4 @@ int main() {
 
 * [silenke](https://github.com/silenke/interview_mini_questions)
 
-* [都要毕业了，C/C++ 的左值和右值还傻傻分不清楚?](ttps://www.bilibili.com/video/BV1Sg411276U/?share_source=copy_web&vd_source=56e0e0c96bf6f17101c5f34f02017dd2)，这个系列的视频讲的也很好，目前就看了第左右值到转发相关的，其他还没看，up还是个的佬
+* [都要毕业了，C/C++ 的左值和右值还傻傻分不清楚?](https://www.bilibili.com/video/BV1Sg411276U/?share_source=copy_web&vd_source=56e0e0c96bf6f17101c5f34f02017dd2)，这个系列的视频讲的也很好，目前就看了第左右值到转发相关的，其他还没看，up还是个的佬
