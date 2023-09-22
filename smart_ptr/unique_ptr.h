@@ -62,7 +62,7 @@ private:
 };
 
 template <class T, class... Args>
-auto MakeUnique(Args&&... args) {
+UniquePtr<T> MakeUnique(Args&&... args) {
     return UniquePtr<T>(new T(std::forward<Args>(args)...));
 }
 
